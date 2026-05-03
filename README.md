@@ -1,4 +1,10 @@
-# Casa Verde Realty — WhatsApp AI Lead Bot
+<p align="center">
+  <img src="brand/logo.png" alt="Casa Verde Realty" width="540" />
+</p>
+
+<h3 align="center">WhatsApp AI Lead Bot</h3>
+
+<p align="center"><em>Westside boutique. Worldwide buyers.</em></p>
 
 [![CI](https://github.com/KirillHat/casa-verde-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/KirillHat/casa-verde-bot/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -17,6 +23,10 @@ Built around a fictional but realistic boutique agency — **Casa Verde Realty**
 > Built as a portfolio piece to show how Claude + Twilio + a sane Python backend can replace a $5k/mo SDR for a small services business.
 
 ---
+
+<p align="center">
+  <img src="brand/hero.png" alt="A boutique Westside Spanish-Mediterranean home — the kind of listing Casa Verde brokers." width="720" />
+</p>
 
 ## 🎬 Demo
 
