@@ -6,6 +6,7 @@ becomes `screenshots/<name>.png`.
 Run:
     python screenshots/render.py
 """
+
 from __future__ import annotations
 
 import asyncio

@@ -7,7 +7,7 @@ FastAPI request handler non-blocking.
 from __future__ import annotations
 
 import asyncio
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from typing import Any
 
 import gspread
@@ -63,7 +63,7 @@ async def append_lead(lead: dict[str, Any], score_label: str, score_value: int) 
     if not _settings.google_sheets_id:
         return
     row = [
-        datetime.now(UTC).isoformat(timespec="seconds"),
+        datetime.now(timezone.utc).isoformat(timespec="seconds"),
         score_label,
         score_value,
         lead.get("name", ""),
