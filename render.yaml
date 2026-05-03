@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: casa-verde-bot
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /healthz
+    envVars:
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_WHATSAPP_FROM
+        value: whatsapp:+14155238886
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CLAUDE_MODEL
+        value: claude-sonnet-4-6
+      - key: GOOGLE_SHEETS_ID
+        sync: false
+      - key: GOOGLE_CREDENTIALS_JSON
+        value: /etc/secrets/google_credentials.json
+      - key: SLACK_WEBHOOK_URL
+        sync: false
+      - key: SLACK_NOTIFY_MIN_SCORE
+        value: WARM
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:////data/leads.db
+      - key: ENVIRONMENT
+        value: production
+      - key: APP_BASE_URL
+        sync: false
+      - key: SENTRY_DSN
+        sync: false
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1

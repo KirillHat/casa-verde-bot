@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Casa Verde Realty — Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sage:        #7FA374;
+    --sage-dark:   #5C7E54;
+    --cream:       #F5EFE6;
+    --charcoal:    #2C2C2C;
+    --hot:         #E63946;
+    --warm:        #F4A93C;
+    --cold:        #5DADE2;
+  }
+  *  { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #1a1a1a;
+    color: #1d1d1f;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+  h2.label {
+    font: 500 14px "JetBrains Mono", monospace;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ============================================================ */
+  /*   WhatsApp phone mockup                                      */
+  /* ============================================================ */
+  .phone {
+    width: 390px;
+    height: 740px;
+    background: #ECE5DD;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.025) 1.5px, transparent 1.5px),
+      radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
+    background-size: 26px 26px, 19px 19px;
+    background-position: 0 0, 9px 13px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      0 0 0 8px #1a1a1a,
+      0 0 0 9px #2a2a2a,
+      0 30px 60px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .phone .statusbar {
+    height: 30px;
+    background: #ECE5DD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+    font: 600 14px -apple-system;
+    color: #000;
+  }
+  .phone .statusbar .icons { display: flex; gap: 5px; align-items: center; }
+  .phone .header {
+    background: #075E54;
+    color: white;
+    padding: 8px 12px 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .phone .header .back { color: #fff; opacity: 0.9; font-size: 24px; line-height: 1; }
+  .phone .header .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 600 17px "Inter";
+    flex-shrink: 0;
+  }
+  .phone .header .info { flex: 1; min-width: 0; }
+  .phone .header .info .name {
+    font: 600 16px "Inter";
+    color: white;
+    margin-bottom: 1px;
+  }
+  .phone .header .info .last {
+    font: 400 12px "Inter";
+    color: rgba(255,255,255,0.75);
+  }
+  .phone .header .ic {
+    color: white;
+    opacity: 0.85;
+    font-size: 20px;
+    margin-left: 4px;
+  }
+  .phone .messages {
+    flex: 1;
+    padding: 10px 8px 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .system {
+    align-self: center;
+    background: #FCF4CB;
+    color: #444;
+    font: 400 12px "Inter";
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin: 6px 0 8px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.1);
+  }
+  .bubble {
+    max-width: 78%;
+    padding: 6px 9px 8px;
+    border-radius: 7px;
+    font: 400 14.5px/1.32 "Inter";
+    color: #111;
+    position: relative;
+    word-wrap: break-word;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+  }
+  .bubble .meta {
+    display: inline-block;
+    float: right;
+    margin: 4px -3px -4px 6px;
+    color: rgba(0,0,0,0.45);
+    font: 400 11px "Inter";
+  }
+  .bubble .meta .ticks {
+    color: #4FC3F7;
+    margin-left: 2px;
+  }
+  .bubble.in {
+    align-self: flex-start;
+    background: #FFFFFF;
+    border-top-left-radius: 0;
+    margin-left: 8px;
+  }
+  .bubble.in::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top-color: #FFFFFF;
+    border-right: 0;
+  }
+  .bubble.out {
+    align-self: flex-end;
+    background: #DCF8C6;
+    border-top-right-radius: 0;
+    margin-right: 8px;
+  }
+  .bubble.out::before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top-color: #DCF8C6;
+    border-left: 0;
+  }
+  .phone .input {
+    background: #ECE5DD;
+    padding: 6px 8px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .phone .input .pill {
+    flex: 1;
+    background: white;
+    border-radius: 22px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    color: #888;
+    font: 400 14px "Inter";
+  }
+  .phone .input .mic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #075E54;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============================================================ */
+  /*   Google Sheet mockup                                        */
+  /* ============================================================ */
+  .sheet {
+    width: 1200px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
+    font: 400 13px "Inter", sans-serif;
+  }
+  .sheet .topbar {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sheet .topbar .file {
+    width: 22px; height: 22px;
+    background: #0F9D58;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font: 700 11px "Inter";
+  }
+  .sheet .topbar .title { font: 500 16px "Google Sans", "Inter"; color: #202124; }
+  .sheet .topbar .star { color: #5f6368; opacity: 0.7; }
+  .sheet .topbar .meta { color: #5f6368; font-size: 12px; margin-left: 8px; }
+  .sheet .menubar {
+    background: white;
+    padding: 4px 16px 6px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #444;
+    font-size: 13px;
+    display: flex;
+    gap: 16px;
+  }
+  .sheet .toolbar {
+    background: white;
+    padding: 6px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #5f6368;
+    font-size: 12px;
+  }
+  .sheet table { width: 100%; border-collapse: collapse; }
+  .sheet thead.colhead th {
+    background: #f1f3f4;
+    color: #5f6368;
+    font: 500 12px "Inter";
+    height: 22px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #c0c0c0;
+    padding: 0;
+  }
+  .sheet thead.header th {
+    background: #DDE4D8;
+    color: #1d1d1f;
+    font: 600 12px "Inter";
+    text-align: left;
+    padding: 8px 8px;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    white-space: nowrap;
+  }
+  .sheet tbody td {
+    padding: 8px 8px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    font: 400 12.5px "Inter";
+    color: #1d1d1f;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sheet tbody td.rowhead {
+    background: #f1f3f4;
+    color: #5f6368;
+    font: 500 11px "Inter";
+    text-align: center;
+    width: 32px;
+  }
+  .sheet .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font: 600 11px "Inter";
+    color: white;
+  }
+  .sheet .pill.HOT  { background: var(--hot); }
+  .sheet .pill.WARM { background: var(--warm); }
+  .sheet .pill.COLD { background: var(--cold); }
+
+  /* ============================================================ */
+  /*   Slack notification mockup                                  */
+  /* ============================================================ */
+  .slack {
+    width: 720px;
+    background: #1A1D21;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+    font: 400 14px "Lato", "Inter", sans-serif;
+    color: #d1d2d3;
+    padding: 16px 20px 18px;
+  }
+  .slack .channel {
+    color: #fff;
+    font: 600 15px "Lato";
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .slack .channel .hash { color: #ABABAD; }
+  .slack .msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .slack .msg .avatar {
+    width: 36px; height: 36px; border-radius: 4px;
+    background: var(--sage);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font: 700 14px "Lato";
+    flex-shrink: 0;
+  }
+  .slack .msg .body { flex: 1; min-width: 0; }
+  .slack .msg .who {
+    font: 700 14px "Lato"; color: #ECEDEE;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .slack .msg .who .bot {
+    background: #4d4f54;
+    color: #d1d2d3;
+    padding: 1px 4px;
+    border-radius: 2px;
+    font: 600 9px "Lato";
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .slack .msg .who .time { color: #9da0a6; font: 400 12px "Lato"; }
+  .slack .msg .text { color: #d1d2d3; margin-top: 2px; }
+  .slack .blocks {
+    margin-top: 8px;
+    border-left: 4px solid var(--hot);
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #232529;
+  }
+  .slack .blocks .header {
+    font: 700 17px "Lato";
+    color: #ECEDEE;
+    margin-bottom: 10px;
+  }
+  .slack .blocks .fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    margin-bottom: 12px;
+  }
+  .slack .blocks .fields .k { font: 700 12.5px "Lato"; color: #ECEDEE; }
+  .slack .blocks .fields .v { font: 400 13.5px "Lato"; color: #d1d2d3; margin-top: 2px; }
+  .slack .blocks .quote {
+    border-left: 3px solid #4d4f54;
+    padding-left: 10px;
+    color: #ABABAD;
+    font: 400 italic 13.5px "Lato";
+    margin-bottom: 10px;
+  }
+  .slack .blocks .ctx {
+    color: #9da0a6;
+    font: 400 12px "Lato";
+  }
+  .slack code {
+    background: #353538;
+    color: #ECEDEE;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font: 500 12px "JetBrains Mono", monospace;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!--   01 — Spanish: Carlos Reyes (HOT, foreign-national)         -->
+<!-- ============================================================ -->
+<h2 class="label">01 — whatsapp_es</h2>
+<div class="phone" id="screen-whatsapp-es">
+  <div class="statusbar">
+    <span>9:41</span>
+    <span class="icons">●●●●● 5G ▮</span>
+  </div>
+  <div class="header">
+    <div class="back">‹</div>
+    <div class="avatar">CV</div>
+    <div class="info">
+      <div class="name">Casa Verde Realty</div>
+      <div class="last">en línea</div>
+    </div>
+    <div class="ic">📹</div>
+    <div class="ic">📞</div>
+  </div>
+  <div class="messages">
+    <div class="system">Mensajes y llamadas en este chat ahora están protegidos con cifrado de extremo a extremo.</div>
+    <div class="system">Twilio Sandbox: ✅ Conectado a +1 415 523 8886</div>
+    <div class="bubble out">Hola, busco una casa 3BR en Santa Monica, hasta $2.5M, soy de México con financiamiento internacional, mudanza en 4 meses<span class="meta">9:14<span class="ticks">✓✓</span></span></div>
+    <div class="bubble in">¡Hola! Soy Sofia, asistente de Casa Verde Realty 🏡 ¡Perfecto, Westside es lo nuestro! ¿Cómo te llamas para que un agente te contacte?<span class="meta">9:14</span></div>
+    <div class="bubble out">Carlos Reyes, mi email es carlos@example.com<span class="meta">9:15<span class="ticks">✓✓</span></span></div>
+    <div class="bubble in">¡Listo, Carlos! Diana o Tomás te escribirán en menos de una hora con opciones que coincidan con tus criterios. ✨<span class="meta">9:15</span></div>
+  </div>
+  <div class="input">
+    <div class="pill">Mensaje</div>
+    <div class="mic">🎙</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--   02 — English: Sarah Chen (HOT, NYC mover)                  -->
+<!-- ============================================================ -->
+<h2 class="label">02 — whatsapp_en</h2>
+<div class="phone" id="screen-whatsapp-en">
+  <div class="statusbar">
+    <span>9:14</span>
+    <span class="icons">●●●●● 5G ▮</span>
+  </div>
+  <div class="header">
+    <div class="back">‹</div>
+    <div class="avatar">CV</div>
+    <div class="info">
+      <div class="name">Casa Verde Realty</div>
+      <div class="last">online</div>
+    </div>
+    <div class="ic">📹</div>
+    <div class="ic">📞</div>
+  </div>
+  <div class="messages">
+    <div class="system">Messages and calls are end-to-end encrypted.</div>
+    <div class="system">Twilio Sandbox: ✅ Connected to +1 415 523 8886</div>
+    <div class="bubble out">Hi, looking for a 2BR rental in Venice, budget $5k/mo, need it for September 1, I'm Sarah<span class="meta">9:14<span class="ticks">✓✓</span></span></div>
+    <div class="bubble in">Hi Sarah! Venice is such a great choice 🏡 September 1st gives us a solid runway to find you something great.<br><br>Any must-haves I should pass along — parking, pet-friendly, laundry in-unit, outdoor space?<span class="meta">9:14</span></div>
+    <div class="bubble out">Walk to coffee shops &gt; parking, no pets, unfurnished<span class="meta">9:17<span class="ticks">✓✓</span></span></div>
+    <div class="bubble in">Love those priorities — very Venice of you ☀️<span class="meta">9:18</span></div>
+  </div>
+  <div class="input">
+    <div class="pill">Message</div>
+    <div class="mic">🎙</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--   03 — Google Sheet                                          -->
+<!-- ============================================================ -->
+<h2 class="label">03 — sheet</h2>
+<div class="sheet" id="screen-sheet">
+  <div class="topbar">
+    <div class="file">📊</div>
+    <div class="title">Casa Verde Leads</div>
+    <span class="star">☆</span>
+    <span class="meta">All changes saved in Drive</span>
+  </div>
+  <div class="menubar">
+    <span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span><span>Tools</span><span>Extensions</span><span>Help</span>
+  </div>
+  <div class="toolbar">
+    <span>↶</span><span>↷</span><span>🖨</span><span>$</span><span>%</span><span>.0</span><span>Default (Arial) ▾</span><span>10 ▾</span><span>B I U S A</span>
+  </div>
+  <table>
+    <thead class="colhead">
+      <tr>
+        <th style="width:32px"></th>
+        <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th>
+        <th>G</th><th>H</th><th>I</th><th>J</th><th>K</th>
+      </tr>
+    </thead>
+    <thead class="header">
+      <tr>
+        <th></th>
+        <th>timestamp_utc</th>
+        <th>score</th>
+        <th>name</th>
+        <th>phone</th>
+        <th>intent</th>
+        <th>budget_max_usd</th>
+        <th>neighborhoods</th>
+        <th>timeline_months</th>
+        <th>financing</th>
+        <th>language</th>
+        <th>summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rowhead">2</td>
+        <td>2026-05-03T04:14</td>
+        <td><span class="pill HOT">HOT</span> 95</td>
+        <td>Carlos Reyes</td>
+        <td>+12135550149</td>
+        <td>buy</td>
+        <td>$2,500,000</td>
+        <td>Santa Monica, Brentwood</td>
+        <td>4</td>
+        <td>foreign_national</td>
+        <td>es</td>
+        <td>Mexican buyer, 3BR Westside, FN loan, 4 mo</td>
+      </tr>
+      <tr>
+        <td class="rowhead">3</td>
+        <td>2026-05-03T04:18</td>
+        <td><span class="pill HOT">HOT</span> 80</td>
+        <td>Sarah Chen</td>
+        <td>+12135550149</td>
+        <td>rent</td>
+        <td>$5,000/mo</td>
+        <td>Venice</td>
+        <td>4</td>
+        <td>rental</td>
+        <td>en</td>
+        <td>NYC mover joining Google, 2BR Venice $5k/mo</td>
+      </tr>
+      <tr>
+        <td class="rowhead">4</td>
+        <td>2026-05-03T04:44</td>
+        <td><span class="pill HOT">HOT</span> 85</td>
+        <td>Maria</td>
+        <td>+12135550149</td>
+        <td>buy</td>
+        <td>$2,000,000</td>
+        <td>Brentwood</td>
+        <td>3</td>
+        <td>jumbo</td>
+        <td>en</td>
+        <td>3BR condo Brentwood, jumbo loan pre-approved</td>
+      </tr>
+      <tr>
+        <td class="rowhead">5</td>
+        <td>2026-05-03T05:01</td>
+        <td><span class="pill WARM">WARM</span> 65</td>
+        <td>Tom</td>
+        <td>+12137770100</td>
+        <td>rent</td>
+        <td>$4,000/mo</td>
+        <td>Culver City</td>
+        <td>1</td>
+        <td>rental</td>
+        <td>en</td>
+        <td>Wants parking, pet-friendly, mid-budget</td>
+      </tr>
+      <tr>
+        <td class="rowhead">6</td>
+        <td>2026-05-03T05:22</td>
+        <td><span class="pill COLD">COLD</span> 30</td>
+        <td>Browser</td>
+        <td>+12135551244</td>
+        <td>buy</td>
+        <td>$600,000</td>
+        <td>—</td>
+        <td>24</td>
+        <td>—</td>
+        <td>en</td>
+        <td>Just browsing, low budget, no timeline</td>
+      </tr>
+      <tr><td class="rowhead">7</td><td colspan="11"></td></tr>
+      <tr><td class="rowhead">8</td><td colspan="11"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!--   04 — Slack notification                                    -->
+<!-- ============================================================ -->
+<h2 class="label">04 — slack</h2>
+<div class="slack" id="screen-slack">
+  <div class="channel"><span class="hash">#</span> casa-verde-leads</div>
+  <div class="msg">
+    <div class="avatar">CV</div>
+    <div class="body">
+      <div class="who">
+        Casa Verde Bot
+        <span class="bot">APP</span>
+        <span class="time">9:15 PM</span>
+      </div>
+      <div class="text">🔥 HOT lead from Carlos Reyes</div>
+      <div class="blocks">
+        <div class="header">🔥 HOT lead — Carlos Reyes</div>
+        <div class="fields">
+          <div>
+            <div class="k">Intent</div>
+            <div class="v">BUY · Santa Monica, Brentwood</div>
+          </div>
+          <div>
+            <div class="k">Budget</div>
+            <div class="v">$2,500,000</div>
+          </div>
+          <div>
+            <div class="k">Timeline</div>
+            <div class="v">4 months</div>
+          </div>
+          <div>
+            <div class="k">Phone</div>
+            <div class="v">+12135550149</div>
+          </div>
+        </div>
+        <div class="quote">Mexican buyer with foreign-national pre-approval, looking for a 3BR home in Santa Monica or Brentwood up to $2.5M, move-in in 4 months.</div>
+        <div class="ctx">score <code>95</code> · lang <code>es</code> · Casa Verde Realty</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

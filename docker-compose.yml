@@ -1,0 +1,21 @@
+services:
+  bot:
+    build: .
+    image: casa-verde-bot:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:////data/leads.db
+      - GOOGLE_CREDENTIALS_JSON=/app/google_credentials.json
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+      - ./google_credentials.json:/app/google_credentials.json:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://127.0.0.1:8000/healthz', timeout=3).raise_for_status()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
