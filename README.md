@@ -31,8 +31,12 @@ Built around a fictional but realistic boutique agency — **Casa Verde Realty**
 ## 🎬 Demo
 
 <p align="center">
-  <img src="screenshots/demo.gif" alt="Inbound WhatsApp message → Sofia qualifies in Spanish → lead appears in Google Sheets → Slack notification" width="320" />
+  <img src="screenshots/demo.gif" alt="Inbound WhatsApp message → Sofia qualifies in Spanish → lead appears in Google Sheets → Slack notification" width="720" />
 </p>
+
+> 4-frame loop showing the full pipeline: a Spanish-speaking buyer messages
+> WhatsApp → Sofia qualifies → an English-speaking renter messages → the lead
+> lands in Google Sheets and Slack ~5 seconds later.
 
 ## 📸 Screenshots
 
