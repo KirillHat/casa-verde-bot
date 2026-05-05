@@ -103,14 +103,18 @@ jobs:
           pip install -r requirements-dev.txt
       - name: Start app and run smoke checks
         env:
-          TWILIO_ACCOUNT_SID: AC00000000000000000000000000000000
-          TWILIO_AUTH_TOKEN: test_token
-          ANTHROPIC_API_KEY: test_key
+          # Test placeholders — real secrets live in Render env, not here.
+          TWILIO_ACCOUNT_SID: AC00000000000000000000000000000000  # pragma: allowlist secret
+          TWILIO_AUTH_TOKEN: test_token                           # pragma: allowlist secret
+          ANTHROPIC_API_KEY: test_key                             # pragma: allowlist secret
           DEBUG_SKIP_TWILIO_SIGNATURE: "true"
+          # In-memory SQLite — no filesystem state, no `data/` dir needed.
+          DATABASE_URL: "sqlite+aiosqlite:///:memory:"
         run: |
           uvicorn app.main:app --host 127.0.0.1 --port 8090 > /tmp/wa.log 2>&1 &
           PID=$!
-          trap "kill $PID || true" EXIT
+          # On any exit (success or failure) print the app log so failures are debuggable.
+          trap 'echo "--- /tmp/wa.log ---"; cat /tmp/wa.log || true; kill $PID 2>/dev/null || true' EXIT
           for i in {1..20}; do
             if curl -fsS http://127.0.0.1:8090/healthz >/tmp/wa_health.json; then
               break
