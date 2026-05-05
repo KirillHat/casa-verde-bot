@@ -22,6 +22,20 @@ def test_healthz(client: TestClient) -> None:
     assert r.json() == {"status": "ok"}
 
 
+def test_request_id_is_echoed(client: TestClient) -> None:
+    r = client.get("/healthz", headers={"X-Request-ID": "wa-rid-1"})
+    assert r.status_code == 200
+    assert r.headers["X-Request-ID"] == "wa-rid-1"
+
+
+def test_metrics_endpoint_exposes_counters(client: TestClient) -> None:
+    client.get("/healthz")
+    r = client.get("/metrics")
+    assert r.status_code == 200
+    assert "app_http_requests_total" in r.text
+    assert 'path="/healthz"' in r.text
+
+
 def test_webhook_acks_immediately(client: TestClient) -> None:
     """Webhook returns 200 + empty TwiML; processing is dispatched in background."""
     with patch("app.webhooks.whatsapp._process_and_reply", new=AsyncMock()) as proc:
