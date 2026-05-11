@@ -23,16 +23,16 @@ A production-ready WhatsApp Business AI assistant that auto-replies to inbound r
 • Pushes leads to Google Sheets + Slack alerts to the on-call agent
 • Handles edge cases: out-of-budget, casual browsers, hostile/spam, off-topic
 
-**Projected impact for a similar agency**
+**Illustrative projection (for a similar agency, not Casa Verde history)**
 • Median first-response: 4h → <30s
 • Weekend coverage: 25% → 100%
 • Leads pre-qualified by AI: 0% → ~80%
 • International TZ capture: +180%
-• Recovered upcoming sales/mo: ~$2.4M
-• Commission recovery/mo: ~$72k
+• Recovered upcoming sales/mo: ~$2.4M (illustrative)
+• Commission recovery/mo: ~$72k (illustrative)
 
 **Tech stack**
-Python 3.11 · FastAPI · Anthropic Claude (Sonnet 4.6, prompt caching + tool use) · Twilio WhatsApp · Google Sheets · Slack Block Kit · SQLAlchemy 2 + SQLite · Docker · Render · GitHub Actions CI (py 3.10/3.11/3.12) · 26 pytest tests, 79% coverage
+Python 3.11 · FastAPI · Anthropic Claude (Sonnet 4.6, prompt caching + tool use) · Twilio WhatsApp · Google Sheets · Slack Block Kit · SQLAlchemy 2 + SQLite · Docker · Render · GitHub Actions CI (py 3.10/3.11/3.12) · 28 pytest tests, 79% coverage
 
 **What's included**
 • Production FastAPI app (~2 000 LoC), structured logs, signed Twilio webhook validation, async background processing — acks Twilio in <100 ms

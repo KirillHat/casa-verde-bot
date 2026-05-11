@@ -21,21 +21,25 @@
 - **Pushes the lead** to a Google Sheet your team already uses (auto-creates the header row), and pings the on-call agent in Slack with a Block Kit card
 - **Edge-case aware** — out-of-budget, casual browsers, hostile / spam, off-topic, existing-client all handled politely in the prompt
 
-## Projected impact (for a similar agency)
+## Projected impact (illustrative — for a similar agency)
+
+> The numbers below are an illustrative projection for a comparable boutique
+> agency, based on industry response-time benchmarks. They are not historical
+> revenue from Casa Verde (Casa Verde is a fictional demo brand).
 
 | Metric | Before | After |
 |---|---|---|
 | Median first-response time | 4 h | **<30 s** |
 | Weekend response coverage | ~25% | **100%** |
-| Leads qualified before human touch | 0% | **~80%** |
+| Leads pre-qualified by AI | 0% | **~80%** |
 | International (Asia / LATAM TZ) capture | low | **+180%** |
-| Recovered upcoming sales / month | — | **~$2.4 M** |
-| Estimated commission recovery / month | — | **~$72 k** |
+| Recovered upcoming sales / month (illustrative) | — | **~$2.4 M** |
+| Estimated commission recovery / month (illustrative) | — | **~$72 k** |
 | Time agents spend on first-touch qualification | ~10 h/wk | **~1 h/wk** |
 
 ## Tech stack
 
-`Python 3.11` · `FastAPI` · `Anthropic Claude` (Sonnet 4.6, **prompt caching** + **tool use**) · `Twilio WhatsApp Business API` (signed-webhook validation) · `Google Sheets` (service account) · `Slack Block Kit` · `SQLAlchemy 2.0 async + aiosqlite` · `Docker` (multi-stage, ~120 MB image) · `Render` free-tier deploy via `render.yaml` · `GitHub Actions CI` (matrix Python 3.10 / 3.11 / 3.12) · `ruff` (lint + format) · `pytest + pytest-asyncio` (26 tests, 79% coverage)
+`Python 3.11` · `FastAPI` · `Anthropic Claude` (Sonnet 4.6, **prompt caching** + **tool use**) · `Twilio WhatsApp Business API` (signed-webhook validation) · `Google Sheets` (service account) · `Slack Block Kit` · `SQLAlchemy 2.0 async + aiosqlite` · `Docker` (multi-stage, ~120 MB image) · `Render` free-tier deploy via `render.yaml` · `GitHub Actions CI` (matrix Python 3.10 / 3.11 / 3.12) · `ruff` (lint + format) · `pytest + pytest-asyncio` (28 tests, 79% coverage)
 
 ## What's in the box
 
