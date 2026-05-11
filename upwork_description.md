@@ -65,7 +65,7 @@ The architecture is generic. To repurpose for a different vertical, swap two fil
 
 Then update the Sheet headers. **Whole adaptation: ~2 hours of focused work.** The portability is the actual product — *not* "a real-estate bot."
 
-Verticals I've planned ports for:
+Example verticals this can be adapted to:
 
 | Vertical | Qualifying fields | Use case |
 |---|---|---|
